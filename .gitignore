@@ -1,0 +1,52 @@
+# Build files
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Selenium specific (if any binaries are downloaded)
+selenium-server/
+selenium-manager/
+
+# Others
+*.db
+*.bak
+*.cache
+*.pid
+*.swp
+
+# Ignore .NET secrets (if using)
+secrets.json
+
+# Ignore publish folder
+publish/
+
+# Ignore any local.env or settings files
+.env
+.env.*
+appsettings.*.json
