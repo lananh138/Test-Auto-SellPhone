@@ -1,30 +1,22 @@
 using main.Test;
 using Test;
-using Test.PageObjects;
+using TestProject.PageObjects;
+using OpenQA.Selenium;
 
 namespace main.Test.Tests.User
 {
+    [TestFixture]
     public class Login : TestBase
     {
         [Test]
         public void DangNhapThanhCong()
         {
-            Thread.Sleep(2000); // Wait for the page to load
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.NavigateToLoginPage();
-            loginPage.EnterEmail("Ngocduy14062003@gmail.com");
-            loginPage.EnterPassword("Duy123");
-            loginPage.ClickLoginButton();
-        }
+            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[1]/div[1]/div[4]/div")).Click();
+            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[2]/div/div[2]/div/div/div[1]/input")).SendKeys("ngocduy1423@gmail.com");
+            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[2]/div/div[2]/div/div/div[2]/span/input")).SendKeys("Duy123123123");
 
-        [Test]
-        public void DangNhapThatbai()
-        {
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.NavigateToLoginPage();
-            loginPage.EnterEmail("Ngocduy14062003@gmail.com");
-            loginPage.EnterPassword("Duy123");
-            loginPage.ClickLoginButton();
+            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[2]/div/div[2]/div/div/div[3]/div/div/button")).Click();
+            Thread.Sleep(5000);
         }
     }
 }

@@ -1,39 +1,50 @@
-namespace Test.PageObjects
-{
-    using OpenQA.Selenium;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+using System;
+using Test;
 
-    public class LoginPage
+namespace TestProject.PageObjects
+{
+    public class LoginPage : TestBase
     {
         private readonly IWebDriver driver;
+        private readonly WebDriverWait wait;
+
+        private readonly By usernameField = By.CssSelector("input[placeholder='Email']");
+        private readonly By passwordField = By.CssSelector("input[placeholder='Nhập mật khẩu']");
+        private readonly By loginButton = By.XPath("//div[@class='ant-spin-container']//button//span[text()='Đăng nhập']");
 
         public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
-        public void NavigateToLoginPage()
+        public void EnterUsername(string username)
         {
-            driver.Navigate().GoToUrl("http://localhost:5085/sign-in");
-        }
-
-        public void EnterEmail(string email)
-        {
-            IWebElement usernameField = driver.FindElement(By.XPath("//*[@id=`root`]/div[1]/div/div/div/div[2]/div/div[2]/div/div/div[1]/input"));
-            usernameField.Clear();
-            usernameField.SendKeys(email);
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(usernameField)).SendKeys(username);
         }
 
         public void EnterPassword(string password)
         {
-            IWebElement passwordField = driver.FindElement(By.XPath("//*[@id=`root`]/div[1]/div/div/div/div[2]/div/div[2]/div/div/div[2]/span/input"));
-            passwordField.Clear();
-            passwordField.SendKeys(password);
+            wait.Until(ExpectedConditions.ElementIsVisible(passwordField)).SendKeys(password);
         }
 
         public void ClickLoginButton()
         {
-            var loginButton = driver.FindElement(By.XPath("//*[@id=`root`]/div[1]/div/div/div/div[2]/div/div[2]/div/div/div[3]/div/div/button"));
-            loginButton.Click();
+            var button = wait.Until(ExpectedConditions.ElementIsVisible(loginButton));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(loginButton)).Click();
+
+            System.Threading.Thread.Sleep(3000);
+        }
+
+
+        public bool IsLoginSuccessful()
+        {
+            bool isLoggedIn = !driver.Url.Contains("sign-in");
+            Console.WriteLine(isLoggedIn ? "Đăng nhập thành công!" : "Đăng nhập thất bại.");
+            return isLoggedIn;
         }
     }
 }

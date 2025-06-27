@@ -28,7 +28,7 @@ public class TestBase
         }
 
         driver = new ChromeDriver(options);
-        driver.Navigate().GoToUrl("http://localhost:5085");
+        driver.Navigate().GoToUrl("http://localhost:5085/");
     }
 
 

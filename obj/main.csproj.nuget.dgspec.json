@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Test_SalePhone\\main\\main.csproj": {}
+    "/Users/phamngocduy/Documents/Test/Test-Auto-SellPhone/main.csproj": {}
   },
   "projects": {
-    "C:\\Test_SalePhone\\main\\main.csproj": {
+    "/Users/phamngocduy/Documents/Test/Test-Auto-SellPhone/main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Test_SalePhone\\main\\main.csproj",
+        "projectUniqueName": "/Users/phamngocduy/Documents/Test/Test-Auto-SellPhone/main.csproj",
         "projectName": "main",
-        "projectPath": "C:\\Test_SalePhone\\main\\main.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Test_SalePhone\\main\\obj\\",
+        "projectPath": "/Users/phamngocduy/Documents/Test/Test-Auto-SellPhone/main.csproj",
+        "packagesPath": "/Users/phamngocduy/.nuget/packages/",
+        "outputPath": "/Users/phamngocduy/Documents/Test/Test-Auto-SellPhone/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/phamngocduy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,12 +39,16 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotNetSeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.12.0, )"
@@ -93,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
