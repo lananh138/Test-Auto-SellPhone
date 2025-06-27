@@ -18,5 +18,10 @@ namespace main.Test.Tests.User
             driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[2]/div/div[2]/div/div/div[3]/div/div/button")).Click();
             Thread.Sleep(5000);
         }
+        [Test]
+        public void DangNhapThatbais()
+        {
+            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[1]/div[1]/div[4]/div")).Click();
+        }
     }
 }
