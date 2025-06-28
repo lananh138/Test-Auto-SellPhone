@@ -23,7 +23,7 @@ namespace TestProject.PageObjects
 
         public void EnterUsername(string username)
         {
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(usernameField)).SendKeys(username);
+            wait.Until(ExpectedConditions.ElementIsVisible(usernameField)).SendKeys(username);
         }
 
         public void EnterPassword(string password)
