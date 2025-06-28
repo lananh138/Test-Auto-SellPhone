@@ -8,24 +8,21 @@ namespace main.Test.Tests.User
     [TestFixture]
     public class Login : TestBase
     {
-        [Test]
-        [Category("Login")]
-        [TestCase("nguyenthilananh1188@gmail.com", "Duy123123123", TestName = "DangNhapThanhCong44")]
-        [TestCase("nguyenthilananh1188@gmail.com", "Duy123123123", TestName = "DangNhapThanhCong3334")]
-        public void DangNhapThanhCong(string email, string password)
-        {
-            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[1]/div[1]/div[4]/div")).Click();
-            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[2]/div/div[2]/div/div/div[1]/input")).SendKeys(email);
-            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[2]/div/div[2]/div/div/div[2]/span/input")).SendKeys(password);
 
-            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[2]/div/div[2]/div/div/div[3]/div/div/button")).Click();
-            Thread.Sleep(5000);
+        [Category("Login")]
+        [TestCase("nguyenthilananh113388@gmail.com", "Llananh", TestName = "Login1")]
+        [TestCase("nguyenthilananh@gmail.com", "123456A", TestName = "Login2")]
+        public void Fun_Login(string email, string password)
+        {
+            //jkj
+            LoginPage loginPage = new LoginPage(driver);
+            driver.FindElement(By.XPath("//*[@id='root']/div[1]/div/div/div/div[1]/div[1]/div[4]/div")).Click();
+            loginPage.EnterUsername(email);
+            loginPage.EnterPassword(password);
+            loginPage.ClickLoginButton();
+            loginPage.IsLoginSuccessful();
+
         }
       
-        [Test]
-        public void DangNhapThatbais()
-        {
-            driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[1]/div[1]/div[4]/div")).Click();
-        }
     }
 }
