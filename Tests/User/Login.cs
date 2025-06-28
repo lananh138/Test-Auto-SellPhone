@@ -11,7 +11,7 @@ namespace main.Test.Tests.User
         [Test]
         [Category("Login")]
         [TestCase("nguyenthilananh1188@gmail.com", "Duy123123123", TestName = "DangNhapThanhCong44")]
-        [TestCase("nguyenthilananh1188@gmail.com", "Duy123123123", TestName = "DangNhapThanhCong3334")]
+        [TestCase("nguyenthilananh1188@gmail.com", "Duy123123123", TestName = "DangNhapThanhCong34")]
         public void DangNhapThanhCong(string email, string password)
         {
             driver.FindElement(By.XPath("//*[@id='root']/div/div/div/div/div[1]/div[1]/div[4]/div")).Click();
