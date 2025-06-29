@@ -6,10 +6,7 @@ using System.Linq;
 
 namespace testauto.Test.Utilities
 {
-
     // Định nghĩa lớp TestCase chứa các thuộc tính cần thiết
-
-
     public class ExcelReportHelper
     {
         public class TestCase
