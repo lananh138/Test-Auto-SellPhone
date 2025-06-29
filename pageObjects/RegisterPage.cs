@@ -49,12 +49,12 @@ namespace TestProject.PageObjects
 
             if (elements.Count == 0)
             {
-                Console.WriteLine("Đăng ký thành công!",elements.Count);
+                Console.WriteLine("Đăng ký thành công!", elements.Count);
 
             }
             else
             {
-                Console.WriteLine("Đăng ký thất bại!",elements.Count);
+                Console.WriteLine("Đăng ký thất bại!", elements.Count);
             }
         }
 

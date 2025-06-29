@@ -1,18 +1,17 @@
-using main.Test;
 using Test;
 using TestProject.PageObjects;
 using OpenQA.Selenium;
-using System.ComponentModel.DataAnnotations;
-
+using testauto.Test.Utilities;
 namespace main.Test.Tests.User
 {
     [TestFixture]
     public class Register : TestBase
     {
+        // [TestCase("ngthiFlafddfnanh12gfdsfgfgggghfgfgft3454444447@gmail.com", "123456A", "123456A", TestName = "Register1")]
+        // [TestCase("", "123456A", "123456A", TestName = "Register2")]
+        // [TestCase("nguyenthilananh1234567@gmail.com", "123456A", "123456A", TestName = "Register3")]
+        [Test, TestCaseSource(typeof(ExcelReportHelper), nameof(ExcelReportHelper.RegisterTestCases))]
         [Category("Register")]
-        [TestCase("ngthiFlafddfnanh12gfdsfgfgggghfgfgft3454444447@gmail.com", "123456A", "123456A", TestName = "Register1")]
-        [TestCase("", "123456A", "123456A", TestName = "Register2")]
-        [TestCase("nguyenthilananh1234567@gmail.com", "123456A", "123456A", TestName = "Register3")]
 
         public void Fun_Register(string email, string password, string repassword)
         {
@@ -24,6 +23,7 @@ namespace main.Test.Tests.User
             registerPage.EnterConfirmPassword(repassword);
             registerPage.ClickRegisterButton();
             registerPage.IsRegisterSuccessful();
+            ExcelReportHelper.WriteToExcel("Register", "Register", "Pass", $"Email: {email}, Password: {password}, RePassword: {repassword}");
         }
     }
 }

@@ -50,3 +50,5 @@ publish/
 .env
 .env.*
 appsettings.*.json
+
+Report/TestManual.xlsx
