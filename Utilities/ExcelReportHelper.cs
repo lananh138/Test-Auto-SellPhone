@@ -35,7 +35,7 @@ namespace testauto.Test.Utilities
                         return;
                     }
 
-                    var row = worksheet.RowsUsed().Skip(8)
+                    var row = worksheet.RowsUsed().Skip(1)
                                     .FirstOrDefault(r => r.Cell(2).GetValue<string>().Trim() == numberTest.Trim());
 
                     if (row != null)

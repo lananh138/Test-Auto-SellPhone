@@ -43,18 +43,19 @@ namespace TestProject.PageObjects
             wait.Until(ExpectedConditions.ElementToBeClickable(registerButton)).Click();
             System.Threading.Thread.Sleep(3000);
         }
-        public void IsRegisterSuccessful()
+        public bool IsRegisterSuccessful()
         {
             var elements = driver.FindElements(By.XPath("//*[@id='root']/div[1]/div/div/div/div[2]/div/div[2]/div/div/div[3]/span/input"));
 
             if (elements.Count == 0)
             {
                 Console.WriteLine("Đăng ký thành công!", elements.Count);
-
+                return true;
             }
             else
             {
                 Console.WriteLine("Đăng ký thất bại!", elements.Count);
+                return false;
             }
         }
 

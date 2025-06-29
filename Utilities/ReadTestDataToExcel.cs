@@ -9,7 +9,7 @@ namespace main.Test.Helpers
 {
     public static class ReadTestDataToExcel
     {
-        private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Report", "BDCLPM.xlsx");
+        private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Report", "TestManual.xlsx");
 
         /// <summary>
         /// Đọc data test ở cột 7 (theo row khớp numberTest ở cột 2),
@@ -30,7 +30,7 @@ namespace main.Test.Helpers
 
                 // Tìm hàng khớp với numberTest ở cột 2, bỏ qua 8 dòng tiêu đề
                 var row = worksheet.RowsUsed()
-                                   .Skip(8)
+                                   .Skip(1)
                                    .FirstOrDefault(r => r.Cell(2).GetValue<string>() == numberTest);
 
                 if (row != null)
